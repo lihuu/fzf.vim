@@ -45,7 +45,7 @@ function! s:defs(commands)
 endfunction
 
 call s:defs([
-\'command!      -bang -nargs=? -complete=dir Files       call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)',
+\'command!      -bang -nargs=? -complete=dir Files       call fzf#vim#files(<q-args>, {"options": ["--layout=reverse"]}, <bang>0)',
 \'command!      -bang -nargs=? GitFiles                  call fzf#vim#gitfiles(<q-args>, fzf#vim#with_preview(<q-args> == "?" ? { "placeholder": "" } : {}), <bang>0)',
 \'command!      -bang -nargs=? GFiles                    call fzf#vim#gitfiles(<q-args>, fzf#vim#with_preview(<q-args> == "?" ? { "placeholder": "" } : {}), <bang>0)',
 \'command! -bar -bang -nargs=? -complete=buffer Buffers  call fzf#vim#buffers(<q-args>, fzf#vim#with_preview({ "placeholder": "{1}" }), <bang>0)',
