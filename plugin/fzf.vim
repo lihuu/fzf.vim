@@ -26,6 +26,16 @@ if exists('g:loaded_fzf_vim')
 endif
 let g:loaded_fzf_vim = 1
 
+let s:is_win = has('win32') || has('win64')
+
+if !exists('g:fzf_external_bash')
+    if s:is_win
+        let g:fzf_external_bash='C:\Windows\system32\bash.exe'
+    else
+        let g:fzf_external_bash='/bin/bash'
+    endif
+endif
+
 let s:cpo_save = &cpo
 set cpo&vim
 let s:is_win = has('win32') || has('win64')
